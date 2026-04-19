@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+{{ $home := site.GetPage "page" "/" }}
+
+<body>
+
+  <header>
+    <h1>{{ .Site.Title }}</h1>
+    {{ with .Site.Params.description }}<p>{{ . }}</p>{{ end }}
+  </header>
+
+  <main>
+    <h1>{{ .Title }}</h1>
+
+    <section class="intro">
+      <p>{{ .Params.Intro | markdownify }}</p>
+      <a href="{{ .Params.LinkHref }}" class="link-button">{{ .Params.LinkText }}</a>
+    </section>
+
+    <section class="content">
+      <p>{{ .Params.Body | markdownify }}</p>
+    </section>
+
+    <section class="feature">
+      <h2>{{ .Params.Header }}</h2>
+      <p>{{ .Params.List | markdownify }}</p>
+    </section>
+
+    <section class="depoimentos">
+      <h2>{{ .Params.Header2 }}</h2>
+      <p>{{ .Params.List2 | markdownify }}</p>
+    </section>
+
+    <section class="about">
+      <h2>{{ .Params.Header3 }}</h2>
+      <p>{{ .Params.About | markdownify }}</p>
+      <h3>{{ .Params.Header4 }}</h3>
+      <a href="{{ .Params.LinkHref }}" class="link-button">{{ .Params.LinkText }}</a>
+    </section>
+</main>
+
+
+  <footer>
+    <div>
+        <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}</p>
+    </div>
+  </footer>
+</body>
+</html>

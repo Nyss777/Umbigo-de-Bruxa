@@ -1,0 +1,15 @@
+# Hugo Build Artifacts
+/public
+/resources
+/_gen
+
+# Hugo Cache/Lock files
+.hugo_build.lock
+
+# Node Modules (if you use NPM/PostCSS/Tailwind)
+node_modules
+package-lock.json
+
+# OS Specific Files
+.DS_Store
+Thumbs.db
