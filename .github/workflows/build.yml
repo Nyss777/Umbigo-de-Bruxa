@@ -25,8 +25,11 @@ jobs:
       - name: Build
         run: hugo --minify
 
+      - name: List files to verify build
+        run: ls -R public
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: public
