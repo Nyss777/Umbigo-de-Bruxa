@@ -6,6 +6,10 @@ on:
       - main  # Set this to your default branch name
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
@@ -25,12 +29,18 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: List files to verify build
-        run: ls -R public
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: public
-          force_orphan: true
+          path: 'public'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
