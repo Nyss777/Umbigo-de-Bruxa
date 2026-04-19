@@ -1,0 +1,127 @@
+/* main.css */
+
+html, body {  
+    height: 100%;  
+    margin: 0;      
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 20rem;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    background-color: #fde9d0;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+}
+
+main {
+    flex: 1 1 auto;
+    margin: 0;
+    gap: 0;
+}
+
+main > * {  
+    padding-left: 2rem;
+    margin: 0;
+    margin-bottom: 0;
+}
+
+main * {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+main h1 {
+    background-color: #5f5389;
+    color: white;
+    width: 100%;
+    padding-top: 1rem;
+    padding-left: 2rem;
+}
+
+main h2 {
+    padding-bottom: 1rem;
+}
+
+main h3 {
+    padding-top: 1rem;
+    text-align: center;
+}
+
+main ol li {
+    margin-bottom: 20px;
+}
+
+main p {
+    margin-bottom: 15px;
+}
+
+section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;    
+}
+
+.intro {
+    background-color: #5f5389;
+    color: white;
+}
+
+.link-button {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    width: 50%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.link-button:hover {
+    background-color: black;
+    color: white    ;
+}
+
+.content {
+    background-color: #fde9d0;
+    color: #5f5389;
+}
+
+.feature {
+    background-color: #5f5389;
+    color: white;
+}
+
+.depoimentos {
+    background-color: #fde9d0;
+    color: #5f5389;
+    line-height: auto   ;
+}
+
+.about {
+    background-color: #5f5389;
+    color: white
+}
+
+footer {
+    text-align: center;        /* centers the footer text */
+    padding: 1.5rem 0;             
+    background: white;
+    color: #000000;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}   
+
+footer p {
+margin: 0;
+}
